@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo博客NexT主题配置记录]]></title>
+    <url>%2F2018%2F10%2F18%2Fhexo-next%2F</url>
+    <content type="text"><![CDATA[记录一些NexT 主题配置 NexT6.0主题github地址：https://github.com/theme-next/hexo-theme-next 安装NexT主题 使用的是Mac环境，打开终端cd到hexo项目的目录,例如我的是~/develop/hexo 1cd ~/develop/hexo 使用git把NexT主题克隆到hexo项目的themes/next目录下 1git clone https://github.com/theme-next/hexo-theme-next themes/next 修改hexo项目根目录下的_config.yml，theme标签改成next 1theme: next 编辑language标签将站点的语言改成中文 12//从 v6.0.3版本起，`zh-Hans`改名为`zh-CN`language: zh-CN Ok修改好保存，终端cd 到hexo根目录，重新生成网站并访问 http://localhost:4000/ 预览效果 12cd ~/develop/hexohexo clean &amp;&amp; hexo g &amp;&amp; hexo s 站点部分配置：基本配置信息修改hexo项目根目录下的_config.yml，找到Site模块 123456title: 标题subtitle: 副标题description: 描述author: 作者language: 语言（简体中文是zh-Hans）timezone: 网站时区（Hexo 默认使用您电脑的时区，不用写） 菜单配置首页、归档、分类、标签、关于等等,需要把前面的#号删掉才能启用该菜单 12345menu: home: / || home //首页archives: /archives/ || archive //归档 categories: /categories/ || th //分类 tags: /tags/ || tags //标签 about: /about/ || user //关于 更多配置请参考官方网站 添加分类模块新建一个分类页面 1hexo new page categories 你会发现你的source文件夹下有了categorcies/index.md 打开index.md文件，添加字段type 1type: &quot;categories&quot; 把文章归入分类只需在创建文章的顶部标题下方添加categories字段，即可自动创建分类名并加入对应的分类中。 12title: 分类测试文章标题categories: 分类名 同理添加标签模块新建一个标签页面 1hexo new page tags 你会发现你的source文件夹下有了tags/index.md 打开index.md，添加字段type 1type: &quot;tags&quot; 添加标签只需要在文字的顶部，添加字段tags，就可以自动把文章通过关键字分类。 1tags: Hexo 同理添加关于界面新建一个关于页面 1hexo new page about 你会发现你的source文件夹下有了about/index.md，打开index.md文件即可编辑关于你的信息，可以随便编辑。 添加搜索功能安装==hexo-generator-searchdb==插件 1npm install hexo-generator-searchdb --save 打开站点配置文件找到 ==Extensions== 节点，添加搜索插件 12345search: path: search.xml field: post format: html limit: 10000 打开主题配置文件，找到Local search ，将 enable 设置为 true 其他的更多配置可以参考官网]]></content>
+      <categories>
+        <category>博客教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac环境利用github+hexo搭建免费个人博客]]></title>
+    <url>%2F2018%2F10%2F16%2Fhexo-github%2F</url>
+    <content type="text"><![CDATA[安装条件： 已安装git 注册github账号 Mac 安装Xcode command line tools 可以在终端输入 1xcode-select --install mac后期的版本可以独立安装Xcode command line tools而不需要先安装Xcode 安装Node.js（可以官网下载安装包，也可以用nvm安装） 使用nvm安装Node.js安装nvm官方安装最新安装指导: https://github.com/creationix/nvm#install-script 你可以使用终端输入以下命令安装: 1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 验证nvm安装完成,安装完成会显示版本号 1nvm version 由于国内访问nvm安装下载可能会很慢，可以通过设置淘宝的nvm源来加快访问速度。淘宝nvm源详情 1234//临时使用npm --registry https://registry.npm.taobao.org install express//持久使用npm config set registry https://registry.npm.taobao.org 安装Node.js使用nvm安装最新的Node.js 1nvm install node 安装Hexo使用nvm安装Hexo 1npm install -g hexo-cli Hexo初始化，建立本地博客项目选定Hexo项目存放位置，如==~/develop/hexo/== , 终端cd进当前目录，执行初始化命令： 1hexo init 为了方便发布到github上，安装 ==hexo-deployer-git== 插件 1npm install hexo-deployer-git --save 生成静态的网站 1hexo generate 启动本地服务器预览网站，默认访问 http://localhost:4000/ 即可看到效果 1hexo server 上传博客静态网页到github创建github仓库登录github，并创建一个空的仓库，标准命名为GitHub用户名.github.io，如：sjcao.github.io。其他选项可以都不用选。 配置SSH密钥终端输入命令生成ssh公钥和私钥 1ssh-keygen -t rsa -C 注册github的邮箱地址 当提示Enter file in which to save the key，可以指定key保存的文件夹，也直接按回车保存在User目录的.ssh文件夹，不过.ssh文件夹在finder的显示是隐藏的，需要按shift+command+.可以显示隐藏文件。 接着需要输入密码，这个密码可以为空的，其实可以不用密码，连续按两次回车键就可以。 也可以用命令打开文件，将公匙内容复制到系统的粘贴板 1open ~/.ssh/id_rsa.pub 登陆GitHub,进入你的Settings。选择SSH and GPG keys。新建SSH key，粘贴密钥，添加即可。 修改博客配置文件打开hexo根目录下的_config.yml,修改配置 1234deploy: type: git repository: github仓库的ssh路径，比如:git@github.com:sjcao/sjcao.github.io.git branch: master 发布网站到GitHub 终端执行hexo generate后，再执行 1hexo deploy 等待执行完成，可以前往访问你自己的 github用户名.github.io访问查看发布后效果。 至此，本地的hexo项目发布到github的步骤已经完成。 接下来这个步骤是为了能在不同的机器同步Hexo项目，方便在不同的地方都可以编辑博客。把Hexo项目同步到Github的仓库的另外一个分支上先打开github 的仓库网页，选择Branch，并输入分支名新建分支，例如：hexo 通过Git把hexo项目同步到远端hexo分支上打开hexo所在目录 1cd ~/develop/hexo 初始化git 仓库 1git init 添加所有文件并提交到本地仓库 12git add -Agit commit -m &apos;upload hexo&apos; 添加远程仓库 1git remote add origin 你的远程仓库的url 修改本地仓库master分支的名称为hexo 1git branch -m master hexo 强制推送本地的仓库到远端的hexo分支 1git push -f origin hexo 至此，本地的Hexo项目已经同步到github的hexo分支上，后期如果更新了博客，顺便也同步到github上的hexo分支上，方便在另外一台机器上克隆下整个Hexo项目]]></content>
+      <categories>
+        <category>博客教程</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
