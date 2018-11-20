@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="a Android Developer">
 <meta property="og:description" content="关于Android JetPack的一些总结。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-20T02:27:50.627Z">
+<meta property="og:updated_time" content="2018-11-20T03:18:01.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidJetpack">
 <meta name="twitter:description" content="关于Android JetPack的一些总结。">
@@ -378,7 +378,7 @@
                 
               
 
-              <time title="创建时间：2018-11-20 09:12:08 / 修改时间：10:27:50" itemprop="dateCreated datePublished" datetime="2018-11-20T09:12:08+08:00">2018-11-20</time>
+              <time title="创建时间：2018-11-20 09:12:08 / 修改时间：11:18:01" itemprop="dateCreated datePublished" datetime="2018-11-20T09:12:08+08:00">2018-11-20</time>
             
 
             
@@ -457,11 +457,33 @@
       
         <p>关于Android JetPack的一些总结。<br><a id="more"></a><br>Jetpack是一个Android软件组件的集合，JetPack可以让开发出高质量的Android apps更加的容易。这些组件能帮助你遵循最佳的实践，释放你的双手去写一些模块化的代码，或者一些复杂的任务，你就可以把精力放在创建你自己的代码身上。<br>Jetpack包括 <code>androidx.*</code> 依赖包，从Android的平台APIs分离出来，这就意味着能提供向下的兼容性，并且会比Android平台更新得更加频繁，请确保你总是能获取到最新的或者最好的 Jetpack 组件。</p>
 <p>JetPack包含四大部分</p>
-<p>1.Foundation 基础组件，</p>
-<p>AppCompat： 兼容旧的Android版本的组件 </p>
+<h4 id="1-Foundation-基础组件："><a href="#1-Foundation-基础组件：" class="headerlink" title="1.Foundation 基础组件："></a>1.Foundation 基础组件：</h4><p>AppCompat： 兼容旧的Android版本的组件 </p>
 <p>Android KTX： 基础Kotlin语言的一些方便快捷的工具</p>
 <p>Multdex：提供支持multiple DEX files</p>
 <p>Test: 单元测试或者UI测试等</p>
+<h4 id="2-Architecture-构建组件："><a href="#2-Architecture-构建组件：" class="headerlink" title="2.Architecture 构建组件："></a>2.Architecture 构建组件：</h4><p>Data Binding： 绑定可观察的数据到UI元素上</p>
+<p>Lifecycles： 管理你的Activity和Fragment的生命周期</p>
+<h4 id="LiveData：-当数据改变时，可自动通知视图更新"><a href="#LiveData：-当数据改变时，可自动通知视图更新" class="headerlink" title="LiveData： 当数据改变时，可自动通知视图更新"></a>LiveData： 当数据改变时，可自动通知视图更新</h4><p>Navigation： 处理Activity、Fragment等的跳转导航</p>
+<p>Paging： 逐步从加载源加载数据</p>
+<p>Room： 流畅通过SQLite数据库获取数据</p>
+<p>ViewModel： 以生命周期的意识管理UI相关的数据</p>
+<p>WorkManager： 管理你的后台运行的工作</p>
+<h4 id="3-Behavior-行为组件可以与标准的Android服务集成、如通知、权限、分享、助手"><a href="#3-Behavior-行为组件可以与标准的Android服务集成、如通知、权限、分享、助手" class="headerlink" title="3.Behavior 行为组件可以与标准的Android服务集成、如通知、权限、分享、助手"></a>3.Behavior 行为组件可以与标准的Android服务集成、如通知、权限、分享、助手</h4><h4 id="Download-manager：-处理大文件的下载"><a href="#Download-manager：-处理大文件的下载" class="headerlink" title="Download manager： 处理大文件的下载"></a>Download manager： 处理大文件的下载</h4><p>Media &amp; playback：向后兼容的媒体播放组件</p>
+<p>Notifications： 提供向后兼容的通知API，支持Wear 和 Anto</p>
+<p>Permissions： 向后兼容的检查和请求权限</p>
+<p>Sharing： 提供适合应用操作栏的分享操作</p>
+<p>Slices： 创建可在应用程序外部显示应用程序的灵活UI元素</p>
+<p>Preferences： 创建可交互的屏幕设置</p>
+<h4 id="4-UI-UI组件提供小部件帮助程序，使你的应用程序不仅简单而且使用起来很愉快"><a href="#4-UI-UI组件提供小部件帮助程序，使你的应用程序不仅简单而且使用起来很愉快" class="headerlink" title="4.UI UI组件提供小部件帮助程序，使你的应用程序不仅简单而且使用起来很愉快"></a>4.UI UI组件提供小部件帮助程序，使你的应用程序不仅简单而且使用起来很愉快</h4><p>Animation &amp; transitions： 移动组件和切换屏幕的动画</p>
+<p>Auto：开发自动的App、用于汽车类的自动操作</p>
+<p>Emoji：在比较旧的平台上启用最新的表情符号字体</p>
+<p>Fragment：可组合的UI基本单元</p>
+<p>Layout：使用不同的类型布置组件</p>
+<p>Palette：调色板</p>
+<p>TV：TV应用开发</p>
+<p>Wear OS by Google：开发Wear组件</p>
+<p>##### </p>
+<p>这里先做一个官网的简单翻译，官网详情：<a href="https://developer.android.google.cn/jetpack/" target="_blank" rel="noopener">https://developer.android.google.cn/jetpack/</a></p>
 
       
     </div>
@@ -553,8 +575,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -633,6 +664,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Foundation-基础组件："><span class="nav-number">1.</span> <span class="nav-text">1.Foundation 基础组件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Architecture-构建组件："><span class="nav-number">2.</span> <span class="nav-text">2.Architecture 构建组件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LiveData：-当数据改变时，可自动通知视图更新"><span class="nav-number">3.</span> <span class="nav-text">LiveData： 当数据改变时，可自动通知视图更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Behavior-行为组件可以与标准的Android服务集成、如通知、权限、分享、助手"><span class="nav-number">4.</span> <span class="nav-text">3.Behavior 行为组件可以与标准的Android服务集成、如通知、权限、分享、助手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Download-manager：-处理大文件的下载"><span class="nav-number">5.</span> <span class="nav-text">Download manager： 处理大文件的下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-UI-UI组件提供小部件帮助程序，使你的应用程序不仅简单而且使用起来很愉快"><span class="nav-number">6.</span> <span class="nav-text">4.UI UI组件提供小部件帮助程序，使你的应用程序不仅简单而且使用起来很愉快</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
