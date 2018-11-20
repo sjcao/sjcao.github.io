@@ -1,7 +1,8 @@
 ---
 title: Mac环境利用github+hexo搭建免费个人博客
 date: 2018-10-16 09:32:56
-tags: 教程
+tags: hexo
+categories: 博客教程
 ---
 
 ### 安装条件：
@@ -10,7 +11,7 @@ tags: 教程
 
 2. 注册github账号
 
-3. Mac 安装Xcode command line tools
+3. Mac 安装Xcode command line tools    <!-- more -->
 
    可以在终端输入
 
@@ -97,9 +98,7 @@ hexo server
 
 登录github，并创建一个空的仓库，标准命名为`GitHub用户名.github.io`，如：sjcao.github.io。其他选项可以都不用选。
 
-![github](hexo-github/github_creater.png)
-
-
+<img src="hexo-github/github_creater.png" width="100%" height="100%" />
 
 #### 配置SSH密钥
 
@@ -150,7 +149,7 @@ hexo deploy
 
 先打开github 的仓库网页，选择Branch，并输入分支名新建分支，例如：hexo
 
-![新建分支](hexo-github/img_branch.png)
+<img src="hexo-github/img_branch.png" width="50%" height="50%" />
 
 #### 通过Git把hexo项目同步到远端hexo分支上
 

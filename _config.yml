@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: sjcao_blog
+title: a Android Developer
 subtitle:
 description: android java and life
 keywords: android java and life
 author: Senju Cao
-language: zh-cn en
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -71,6 +71,11 @@ per_page: 10
 pagination_dir: page
 
 # Extensions
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
