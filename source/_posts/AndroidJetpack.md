@@ -5,7 +5,7 @@ tags:
 - Android
 - Android JetPack
 categories:
-- Android JetPack总结
+- Android总结
 ---
 关于Android JetPack的一些总结。
 <!--more-->
